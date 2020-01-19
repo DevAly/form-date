@@ -22,7 +22,7 @@ $(document).ready(function () {
         if (inputNumber === 1) {
             if (!isEqualOrBiggerThanToday(currentDate)) {
                 //empty the input if the value is lower than today
-                showError(e.target, 'First date should be greater than today!')
+                showError(e.target, 'First date should be equal or greater than today!')
                 return $(e.target).val('');
             } else {
                 removeError(e.target);
@@ -38,7 +38,7 @@ $(document).ready(function () {
             }
             //check if current date between previous and next date
             if (!isBetweenTwoDates(currentDate, previousInputDateValue, nextInputDateValue) && !isEmpty($nextInput.val())) {
-                return console.log('between');
+                return alert('You should enter a date between the previous and next date');
             }
 
             var difference = currentDate.diff(previousInputDateValue, 'days');
